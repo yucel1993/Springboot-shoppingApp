@@ -1,0 +1,469 @@
+{
+	"info": {
+		"_postman_id": "73f1a41d-5622-49e4-ba25-80f96a07934e",
+		"name": "shopApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28016373"
+	},
+	"item": [
+		{
+			"name": "category",
+			"item": []
+		},
+		{
+			"name": "image",
+			"item": [
+				{
+					"name": "imageAdd",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/ckad-Burhan.png"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/ckad.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:9191/api/v1/images/upload?productId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"v1",
+								"images",
+								"upload"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getImageById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/ckad-Burhan.png"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/ckad.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:9191/api/v1/images/upload?productId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"v1",
+								"images",
+								"upload"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "getAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:9191/api/v1/products/all"
+					},
+					"response": []
+				},
+				{
+					"name": "getProductById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:9191/api/v1/products/product/1/product"
+					},
+					"response": []
+				},
+				{
+					"name": "getByBrand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9191/api/v1/products/product/by-brand?brand=Samsung",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"product",
+								"by-brand"
+							],
+							"query": [
+								{
+									"key": "brand",
+									"value": "Samsung"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByBrand Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:9191/api/v1/products/product/Electronics/all/products"
+					},
+					"response": []
+				},
+				{
+					"name": "addProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Phone\",\r\n    \"brand\": \"Samsung\",\r\n    \"price\": 100,\r\n    \"inventory\": 20,\r\n    \"description\": \"Samsung smart products\",\r\n    \"category\": \"Electronics\",\r\n    \"quantity\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:9191/api/v1/products/add"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cartItems",
+			"item": [
+				{
+					"name": "createCart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGV4YW1wbGUuY29tIiwiaWQiOjgsInJvbGVzIjpbXSwiaWF0IjoxNzM3NDAyMzM4LCJleHAiOjE3Mzc0NzQzMzh9.DwKyf2COW0n0uycs5O0jyj283RAThrauXV4UrBNPzVM"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9191/api/v1/cartItems/item/add?productId=1&quantity=2",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"v1",
+								"cartItems",
+								"item",
+								"add"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "1"
+								},
+								{
+									"key": "quantity",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCart Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9191/api/v1/cartItems/cart/1/item/1/update?quantity=4",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"v1",
+								"cartItems",
+								"cart",
+								"1",
+								"item",
+								"1",
+								"update"
+							],
+							"query": [
+								{
+									"key": "quantity",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeItem",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:9191/api/v1/cartItems/cart/1/item/1/remove"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "createOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:9191/api/v1/orders/user/place-order?userId=8",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"user",
+								"place-order"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:9191/api/v1/orders/1/order"
+					},
+					"response": []
+				},
+				{
+					"name": "getOrder Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:9191/api/v1/orders/user/8/order"
+					},
+					"response": []
+				},
+				{
+					"name": "stripe",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 400,\r\n    \"currency\": \"usd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:9191/api/v1/orders/payment/create-payment-intent"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"john@example.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:9191/api/v1/users/add"
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"john@example.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:9191/api/v1/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "postUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"user1\",\r\n    \"email\": \"user1@example.com\",\r\n    \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:9191/api/v1/users/add"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "userChart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGV4YW1wbGUuY29tIiwiaWQiOjgsInJvbGVzIjpbXSwiaWF0IjoxNzM3NDAyMzM4LCJleHAiOjE3Mzc0NzQzMzh9.DwKyf2COW0n0uycs5O0jyj283RAThrauXV4UrBNPzVM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:9191/api/v1/carts/user/8/my-cart"
+					},
+					"response": []
+				},
+				{
+					"name": "userCartDelete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGV4YW1wbGUuY29tIiwiaWQiOjgsInJvbGVzIjpbXSwiaWF0IjoxNzM3NDAyMzM4LCJleHAiOjE3Mzc0NzQzMzh9.DwKyf2COW0n0uycs5O0jyj283RAThrauXV4UrBNPzVM"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:9191/api/v1/carts/1/clear"
+					},
+					"response": []
+				},
+				{
+					"name": "getTotalPrice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGV4YW1wbGUuY29tIiwiaWQiOjgsInJvbGVzIjpbXSwiaWF0IjoxNzM3NDAyMzM4LCJleHAiOjE3Mzc0NzQzMzh9.DwKyf2COW0n0uycs5O0jyj283RAThrauXV4UrBNPzVM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:9191/api/v1/carts/1/cart/total-price"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

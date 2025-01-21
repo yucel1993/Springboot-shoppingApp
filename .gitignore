@@ -1,10 +1,10 @@
-HELP.md
+# Maven build directories
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### STS ###
+# STS (Spring Tool Suite)
 .apt_generated
 .classpath
 .factorypath
@@ -13,22 +13,33 @@ target/
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
-.idea
+# IntelliJ IDEA
+.idea/
 *.iws
 *.iml
 *.ipr
 
-### NetBeans ###
+# NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
+
+# VS Code
+.vscode/
+
+# Build directories
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
+
+# Environment variables
 .env
 
-### VS Code ###
-.vscode/
+# Logs
+*.log
+
+# Exclude system files
+.DS_Store
+Thumbs.db
